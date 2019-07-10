@@ -1,0 +1,8 @@
+The application was written in java 11 and requires at least this version
+The application reads data from the local database.
+Before using it, you must configure it for this purpose:
+1. open file src\main\resources\hibernate.cfg.xml
+2 in  line 18 jdbc:h2:file:.....  you must enter database location
+3 right click on db.mv.db and chose copy patch
+4 past it in jdbc:h2:file:... for example jdbc:h2:file:C:\programowanie\!HOME_TODO_LIST\TODO\db remember to delete .mv.db
+After that you can open your browser and visit site http://localhost:8080/
