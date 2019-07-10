@@ -1,4 +1,4 @@
-package pl.babel;
+package pl.babel.hello;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,9 @@
-package pl.babel;
+package pl.babel.hello;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.babel.lang.Lang;
+import pl.babel.lang.LangRepository;
 
 import java.util.Optional;
 

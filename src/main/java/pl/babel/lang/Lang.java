@@ -1,4 +1,4 @@
-package pl.babel;
+package pl.babel.lang;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "languages")
+public
 class Lang {
     @Id
     @GeneratedValue(generator = "inc")
@@ -25,17 +26,17 @@ class Lang {
     Lang() {
     }
 
-    Lang(Integer id, String welcomeMsg, String code) {
+    public Lang(Integer id, String welcomeMsg, String code) {
         this.id = id;
         this.welcomeMsg = welcomeMsg;
         this.code = code;
     }
 
-    Integer getId() {
+    public Integer getId() {
         return id;
     }
 
-    String getWelcomeMsg() {
+    public String getWelcomeMsg() {
         return welcomeMsg;
     }
 
