@@ -40,15 +40,8 @@ class Lang {
         return welcomeMsg;
     }
 
-    public void setWelcomeMsg(String welcomeMsg) {
-        this.welcomeMsg = welcomeMsg;
-    }
-
-    public String getCode() {
+    String getCode() {
         return code;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
 }

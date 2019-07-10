@@ -37,4 +37,18 @@ public class TodoServlet extends HttpServlet {
         mapper.writeValue(resp.getOutputStream(), repository.findAll());
     }
 
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        logger.info("Put request");
+        var pathInfo = req.getPathInfo();
+        Integer todoId = null;
+        try {
+            todoId = Integer.valueOf(pathInfo.substring(1));
+        } catch (NumberFormatException e) {
+            logger.warn("Non-numeric todo id used: " + pathInfo);
+        }
+        resp.setContentType("application/json;charset=UTF-8");
+        mapper.writeValue(resp.getOutputStream(), repository.toggleTodo(todoId));
+    }
+
 }
