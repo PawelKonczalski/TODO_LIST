@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 
-public class AppTest {
+public class HelloServiceTest {
     private static final String WELCOME = "Hello";
     private static final String FALLBACK_ID_WELCOME = "STOP";
 
@@ -42,7 +42,7 @@ public class AppTest {
         // given
         var mockRepository = new LangRepository() {
             @Override
-            Optional<Lang> findById(Long id) {
+            Optional<Lang> findById(Integer id) {
                 return Optional.empty();
             }
         };
@@ -84,7 +84,7 @@ public class AppTest {
     private LangRepository fallbackIdLangRepository() {
         return new LangRepository() {
             @Override
-            Optional<Lang> findById(Long id) {
+            Optional<Lang> findById(Integer id) {
                 if (id.equals(HelloService.FALLBACK_LANG.getId())) {
                     return Optional.of(new Lang(null, FALLBACK_ID_WELCOME, null));
                 }
@@ -96,7 +96,7 @@ public class AppTest {
     private LangRepository alwaysReturningHelloRepository() {
         return new LangRepository() {
             @Override
-            Optional<Lang> findById(Long id) {
+            Optional<Lang> findById(Integer id) {
                 return Optional.of(new Lang(null, WELCOME, null));
             }
         };
